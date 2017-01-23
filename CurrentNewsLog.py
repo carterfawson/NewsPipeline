@@ -4,3 +4,17 @@
 #cloud archive is and we can check each article before sending it off.
 
 ##Also make sure that this dumps out whatever is in memory before the program exits if an exception is thrown or it is killed
+
+class CurrentNewsLog:
+    def __init__(self):
+        self.log = {}
+
+    def ReplaceSourceArticles(self, articles):
+        self.log[articles['source']] = articles['articles']
+
+    def CheckArticleDuplicate(self, article):
+        if article['source_id'] in self.log:
+            for old_article in self.log[article['source_id']]:
+                if article['url'] == old_article['url']:
+                    return True
+        return False
