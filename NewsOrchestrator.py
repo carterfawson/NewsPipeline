@@ -6,6 +6,7 @@ import CurrentNewsLog
 import time
 
 endless = True
+counter = 0
 
 while endless:
     sources = NewsAPIConnection.retrieveNewsSources()
@@ -25,5 +26,7 @@ while endless:
             if not currentNews.CheckArticleDuplicate(article):
                 NewsStreamer.SendArticleToStream(article)
         currentNews.ReplaceSourceArticles(articles)
+    counter += 1
 
+    print("This is the %s iteration: waiting for 30 minutes before checking again!" % (counter))
     time.sleep(1800)
