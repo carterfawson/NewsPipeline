@@ -29,4 +29,4 @@ while endless:
     counter += 1
 
     print("This is the %s iteration: waiting for 30 minutes before checking again!" % (counter))
-    time.sleep(1800)
+    time.sleep(3600)
