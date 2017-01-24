@@ -28,5 +28,5 @@ while endless:
         currentNews.ReplaceSourceArticles(articles)
     counter += 1
 
-    print("This is the %s iteration: waiting for 30 minutes before checking again!" % (counter))
-    time.sleep(3600)
+    print("This is the %s iteration: waiting for 3 hours before checking again!" % (counter))
+    time.sleep(10800)
